@@ -110,16 +110,21 @@
 			}
 		},
 		async onLoad() {
-			console.log(window.location.search.substr(8))
+			console.log("2:" + window.location.search.substr(8))
 			let that = this
 			this.imgBaseUrl = this.baseUrl
-			this.coCode = window.location.search.substr(8)
+			// this.coCode = window.location.search.substr(8)
 			// this.doCoid()
+			this.coCode=this.getCoCode("CoCode") 
+			console.log("1cocode:" + this.coCode)
+			if(this.coCode == '' || this.coCode == null || typeof(this.coCode) === 'undefined'){
+				let productID=this.getCoCode("ProductID") 
+				uni.navigateTo({
+					url:"../product/productinfo?ProductID="+productID
+				})
+			}
 			this.getCoid()
 			this.getCompanyExplain();
-			// this.getSwiper();
-			// this.getCompanyImages();
-			// this.getRecommendProduct()
 		},
 		// 视频播放函数
 		onShow() {
@@ -137,7 +142,7 @@
 		},
 		methods: {
 			// 获取当前页面的参数函数
-			/* getCoCode(name) {
+			getCoCode(name) {
 				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
 				var r = window.location.search.substr(1).match(reg);
 				if (r != null) {
@@ -145,11 +150,7 @@
 				}
 
 				return "";
-			}, */
-			// 通过cocode获取企业coid
-			// async doCoid() {
-			// 	await this.getCoid()
-			// },
+			},
 			getCoid() {
 				var _this = this
 				return new Promise((resolve, reject) => {
@@ -264,7 +265,6 @@
 			// 跳转产品详情
 			navigateTo(productid) {
 				uni.navigateTo({
-					// url:'productinfo?ProductID='+productid,
 					url: '../product/productinfo?ProductID=' + productid
 				})
 			},
@@ -375,7 +375,6 @@
 	/* 商品推荐部分 */
 	.recommendProduct {
 		margin-top: 14upx;
-		margin-bottom: 226upx;
 	}
 
 	.recommendTitle {

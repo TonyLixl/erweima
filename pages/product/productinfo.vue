@@ -152,7 +152,4 @@
 	.bottomShow {
 		margin: 0 10upx;
 	}
-	.explainPart{
-		margin-bottom: 236upx;
-	}
 </style>
