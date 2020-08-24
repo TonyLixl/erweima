@@ -54,7 +54,7 @@
 			let that = this
 			this.getSwiper()
 			this.getProductTypeList()
-			this.firstProductType()
+			// this.firstProductType()
 		},
 		methods: {
 			// 获取顶部公司轮播图
@@ -97,10 +97,8 @@
 					success: (res) => {
 						this.productTypeList = res.data.ObjList
 						this.productTypeList[0].style = "background-color:#fff"
-						uni.setStorage({
-							key: 'productTypeID',
-							data: this.productTypeList[0].ProductTypeID
-						})
+						uni.setStorageSync("productTypeID",this.productTypeList[0].ProductTypeID)
+						this.firstProductType()
 					}
 				})
 			},
