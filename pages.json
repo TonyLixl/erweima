@@ -1,0 +1,80 @@
+{
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "青海省净意信息科技有限公司",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/product/product",
+			"style": {
+				"navigationBarTitleText": "青海省净意信息科技有限公司",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/news/news",
+			"style": {
+				"navigationBarTitleText": "青海省净意信息科技有限公司",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/contact/contact",
+			"style": {
+				"navigationBarTitleText": "青海省净意信息科技有限公司",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/news/newsdetail",
+			"style": {
+				"navigationBarTitleText": "新闻详情",
+				"navigationBarBackgroundColor": "black"
+			}
+		},
+		{
+			"path": "pages/product/productinfo",
+			"style": {
+				"navigationBarTitleText": "产品详情",
+				"navigationBarBackgroundColor": "black"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "青海省净意信息科技有限公司",
+		"navigationBarBackgroundColor": "#fff"
+	},
+	"tabBar": {
+		"color": "#333",
+		"selectedColor": "#1f73f3",
+		"backgroundColor": "#fff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/images/icon/index.png",
+				"selectedIconPath": "static/images/icon/index-selected.png"
+			},
+			{
+				"pagePath": "pages/product/product",
+				"text": "产品",
+				"iconPath": "static/images/icon/class.png",
+				"selectedIconPath": "static/images/icon/class-selected.png"
+			},
+			{
+				"pagePath": "pages/news/news",
+				"text": "新闻",
+				"iconPath": "static/images/icon/contact.png",
+				"selectedIconPath": "static/images/icon/contact-selected.png"
+			},
+			{
+				"pagePath": "pages/contact/contact",
+				"text": "联系",
+				"iconPath": "static/images/icon/person.png",
+				"selectedIconPath": "static/images/icon/person-selected.png"
+			}
+		]
+	}
+}

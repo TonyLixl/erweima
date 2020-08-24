@@ -1,0 +1,86 @@
+<template>
+	<div>
+		<video id="video" loop="true" :autoplay="autoPlay" :src="url"  enable-danmu="true" 
+		 :poster="poster" @fullscreenchange="setFullScreenStatus" @timeupdate="timeUpdate">
+		</video>
+		<div class="video-process-bar" :style="{'background-color':processBarColor,width:processBarWidth}"></div>
+	</div>
+</template>
+<script>
+	export default {
+		props: {
+			autoPlay: {
+				type: Boolean,
+				default: false
+			},
+			url: {
+				type: String,
+				default: ''
+			},
+			poster: {
+				type: String,
+				default: ''
+			},
+			processBarColor: {
+				type: String,
+				default: "#39BFFD"
+			}
+		},
+		data() {
+			return {
+				screenWidth: 750,
+				isFullScreen: false,
+				isDownloading: false,
+				downloadTask: null,
+				progressValue: 0,
+				processBarWidth: 0,
+			};
+		},
+		created() {
+			this.screenWidth = uni.getSystemInfoSync().windowWidth;
+		},
+		methods: {
+			showToast(title) {
+				uni.showToast({
+					title: title,
+					icon: 'none'
+				})
+			},
+			timeUpdate(e) {
+				this.processBarWidth = (e.detail.currentTime / e.detail.duration) * this.screenWidth;
+			},
+			setFullScreenStatus(e) {
+				if (e.detail.direction == 'horizontal') {
+					this.isFullScreen = true;
+				} else {
+					this.isFullScreen = false;
+				}
+			},
+			back() {
+				uni.navigateBack();
+			}
+		}
+	};
+</script>
+<style lang="scss">
+	#video{
+		position: fixed;
+		right:0;
+		// bottom: 100upx;
+		width: 100%;
+		height: 100%;
+	}
+	.process-text {
+		color: #fff;
+		font-size: 10px;
+	}
+
+	.video-process-bar {
+		height: 2px;
+	}
+
+	.process-text-horizontal {
+		color: #fff;
+		font-size: 5px;
+	}
+</style>
