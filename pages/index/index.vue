@@ -184,9 +184,6 @@
 							this.url = this.baseUrl + res.data.VideoUrl
 							this.dataShowVideo = true
 						}
-						
-						// 不要poster就直接展示视频开始的画面
-						// this.poster=this.baseUrl+res.data.VideoUrl
 						this.companyIntroduce = res.data.Explain
 
 					},
@@ -274,14 +271,6 @@
 
 <style>
 	@import '../../public.css';
-
-	/* .swiper:after {
-	    content: " ";
-	    display:block; 
-	}
-	.swiper::after{
-	    content: url("https://www.xiaoyuer.com/img/mobile_phone.png");
-	} */
 	/* 公司简介 */
 	.companyIntroduce {
 		margin-top: 10upx;
@@ -306,7 +295,6 @@
 	/* 商品展示部分 */
 	.companyExhibition {
 		margin-top: 14upx;
-		/* height: 550upx; */
 		width: 100%;
 	}
 
