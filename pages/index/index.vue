@@ -110,13 +110,10 @@
 			}
 		},
 		async onLoad() {
-			console.log("2:" + window.location.search.substr(8))
 			let that = this
 			this.imgBaseUrl = this.baseUrl
 			// this.coCode = window.location.search.substr(8)
-			// this.doCoid()
 			this.coCode=this.getCoCode("CoCode") 
-			console.log("1cocode:" + this.coCode)
 			if(this.coCode == '' || this.coCode == null || typeof(this.coCode) === 'undefined'){
 				let productID=this.getCoCode("ProductID") 
 				uni.navigateTo({
